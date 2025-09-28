@@ -1,0 +1,73 @@
+{
+  "info": {
+    "name": "DeepSeek API Learning Collection",
+    "description": "Complete Postman collection for learning DeepSeek API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Basic Chat Completion",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{api_key}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"deepseek-chat\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Hello! Explain APIs like I'm 10 years old.\"\n    }\n  ],\n  \"max_tokens\": 500,\n  \"temperature\": 0.7\n}"
+        },
+        "url": {
+          "raw": "{{api_url}}/chat/completions",
+          "host": ["{{api_url}}"],
+          "path": ["chat", "completions"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Streaming Chat",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{api_key}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"deepseek-chat\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Tell me a story about learning to code.\"\n    }\n  ],\n  \"stream\": true,\n  \"max_tokens\": 300\n}"
+        },
+        "url": {
+          "raw": "{{api_url}}/chat/completions",
+          "host": ["{{api_url}}"],
+          "path": ["chat", "completions"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "api_url",
+      "value": "https://api.deepseek.com",
+      "type": "string"
+    },
+    {
+      "key": "api_key",
+      "value": "your-api-key-here",
+      "type": "string"
+    }
+  ]
+}
