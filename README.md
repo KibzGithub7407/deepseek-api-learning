@@ -41,3 +41,15 @@ deepseek-api-learning/
     ├── python_guide.md
     └── troubleshooting.md
 ```
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8+
+- GitHub account
+- DeepSeek API key ([Get one here](https://platform.deepseek.com/))
+- Postman (optional)
+
+### Step 1: Clone & Setup
+```bash
+git clone https://github.com/KibzGithub7407/deepseek-api-learning.git
+cd deepseek-api-learning
